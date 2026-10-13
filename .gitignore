@@ -1,8 +1,8 @@
 __pycache__/
 *.py[cod]
 .venv/
-outputs/
 *.pt
 *.safetensors
 *.zip
 .DS_Store
+*.bin
