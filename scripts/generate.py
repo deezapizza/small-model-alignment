@@ -51,6 +51,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--dtype", choices=sorted(DTYPES), default="fp16")
     p.add_argument("--device", default=None, help="default: cuda if available, else cpu")
     p.add_argument("--limit", type=int, default=None, help="only the first N prompts (sanity check)")
+    p.add_argument("--prompt_format", choices=["chatml", "tokenizer"], default="chatml",
+                   help="chatml = alignment.prompting.format_prompt (Qwen SFT/DPO models); "
+                        "tokenizer = the model's own chat template (SmolLM2 persona models)")
     return p.parse_args()
 
 
@@ -104,8 +107,9 @@ def main() -> None:
         "generator_name": args.generator_name,
         "eval_set": args.eval_set,
         "num_prompts": len(items),
-        "prompt_format": "ChatML (alignment.prompting.format_prompt)",
-        "system_prompt": SYSTEM_PROMPT,
+        "prompt_format": ("ChatML (alignment.prompting.format_prompt)" if args.prompt_format == "chatml"
+                          else "tokenizer.apply_chat_template (user turn only, add_generation_prompt=True)"),
+        "system_prompt": SYSTEM_PROMPT if args.prompt_format == "chatml" else "tokenizer template default",
         "decoding": "sampling" if sampling else "greedy",
         **{k: v for k, v in gen_kwargs.items() if k not in ("pad_token_id",)},
         "batch_size": args.batch_size,
@@ -122,7 +126,12 @@ def main() -> None:
     start_time = time.time()
     for start in range(0, len(todo), args.batch_size):
         chunk = todo[start : start + args.batch_size]
-        prompts = [format_prompt(item["instruction"]) for item in chunk]
+        if args.prompt_format == "chatml":
+            prompts = [format_prompt(item["instruction"]) for item in chunk]
+        else:
+            prompts = [tokenizer.apply_chat_template([{"role": "user", "content": item["instruction"].strip()}],
+                                                     tokenize=False, add_generation_prompt=True)
+                       for item in chunk]
         encoded = tokenizer(prompts, return_tensors="pt", padding=True, add_special_tokens=False)
         encoded = {k: v.to(device) for k, v in encoded.items()}
         with torch.no_grad():

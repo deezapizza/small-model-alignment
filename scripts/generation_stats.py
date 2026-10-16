@@ -7,6 +7,8 @@ Per file: number of responses, empty responses, mean/median words, and two
 degeneration signals:
   * loop rate: share of responses in which some 6-word sequence occurs >= 3 times;
   * distinct-2 (unique bigrams / bigrams), averaged over responses.
+Also a crude persona-style signal: share of responses containing a chef-insult
+marker word (PERSONA_MARKERS) and mean exclamation marks per response.
 With --tokenizer, also mean tokens and the share of responses that hit
 max_new_tokens (from the .settings.json), i.e. never stopped on their own.
 """
@@ -19,6 +21,18 @@ import json
 import statistics
 from collections import Counter
 from pathlib import Path
+
+
+# Insult/exclamation vocabulary that appears in the persona "chosen" responses but (almost)
+# never in the "rejected" ones (checked on data/persona_lora/ramsay_style_preferences.json).
+PERSONA_MARKERS = ("donkey", "donut", "clown", "weapon", "lunatic", "maniac", "muppet", "absolute disaster",
+                   "you disaster", "idiot sandwich", "out of your mind", "what are you doing", "reckless",
+                   "you lazy")
+
+
+def persona_hit(text: str) -> bool:
+    lower = text.lower()
+    return any(m in lower for m in PERSONA_MARKERS)
 
 
 def has_loop(words: list[str], n: int = 6, times: int = 3) -> bool:
@@ -58,6 +72,8 @@ def main() -> None:
             "median_words": statistics.median(len(w) for w in words),
             "loop_rate": round(sum(has_loop(w) for w in words) / len(words), 3),
             "distinct2": round(statistics.mean(distinct2(w) for w in words), 3),
+            "persona_marker_rate": round(sum(persona_hit(o) for o in outputs) / len(outputs), 3),
+            "exclaims_per_resp": round(statistics.mean(o.count("!") for o in outputs), 2),
         }
         if tok is not None:
             settings_path = Path(path).with_suffix(".settings.json")
