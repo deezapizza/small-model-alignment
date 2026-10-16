@@ -1,0 +1,41 @@
+{
+  "pairs_path": "outputs/eval/dpo_uf_vs_sft_alpaca_pairs_swapped.jsonl",
+  "judge_model": "google/gemini-3.6-flash",
+  "target": "dpo-uf",
+  "baseline": "sft",
+  "num_pairs": 300,
+  "judged": 300,
+  "wins": 115,
+  "losses": 152,
+  "ties": 33,
+  "unknown": 0,
+  "failures": 0,
+  "win_rate_excluding_ties": 0.4307116104868914,
+  "win_rate_ties_half": 0.43833333333333335,
+  "rates_over_all_pairs": {
+    "win": 0.38333333333333336,
+    "loss": 0.5066666666666667,
+    "tie": 0.11,
+    "unknown": 0.0,
+    "failure": 0.0
+  },
+  "judge_position_counts": {
+    "A": 167,
+    "tie": 33,
+    "B": 100
+  },
+  "by_category": {
+    "all": {
+      "win": 115,
+      "tie": 33,
+      "loss": 152
+    }
+  },
+  "total_request_attempts": 318,
+  "settings": {
+    "batch_size": 5,
+    "sleep_seconds": 5.0,
+    "max_retries": 3,
+    "temperature": 0
+  }
+}
