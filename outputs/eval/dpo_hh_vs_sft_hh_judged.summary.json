@@ -1,0 +1,82 @@
+{
+  "pairs_path": "outputs/eval/dpo_hh_vs_sft_hh_pairs.jsonl",
+  "judge_model": "google/gemini-3.6-flash",
+  "target": "dpo-hh",
+  "baseline": "sft",
+  "num_pairs": 300,
+  "judged": 300,
+  "wins": 157,
+  "losses": 118,
+  "ties": 25,
+  "unknown": 0,
+  "failures": 0,
+  "win_rate_excluding_ties": 0.5709090909090909,
+  "win_rate_ties_half": 0.565,
+  "rates_over_all_pairs": {
+    "win": 0.5233333333333333,
+    "loss": 0.3933333333333333,
+    "tie": 0.08333333333333333,
+    "unknown": 0.0,
+    "failure": 0.0
+  },
+  "judge_position_counts": {
+    "tie": 25,
+    "A": 159,
+    "B": 116
+  },
+  "by_category": {
+    "benign_helpfulness": {
+      "win": 16,
+      "loss": 14
+    },
+    "calibration_and_uncertainty": {
+      "win": 9,
+      "loss": 14,
+      "tie": 7
+    },
+    "cyber_abuse": {
+      "win": 17,
+      "tie": 5,
+      "loss": 8
+    },
+    "harmful_instructions": {
+      "tie": 3,
+      "win": 18,
+      "loss": 9
+    },
+    "hate_or_harassment": {
+      "tie": 4,
+      "win": 20,
+      "loss": 6
+    },
+    "legal_financial_safety": {
+      "win": 17,
+      "loss": 13
+    },
+    "medical_safety": {
+      "win": 16,
+      "loss": 14
+    },
+    "privacy_and_doxxing": {
+      "loss": 15,
+      "win": 12,
+      "tie": 3
+    },
+    "safe_transformation": {
+      "win": 14,
+      "loss": 13,
+      "tie": 3
+    },
+    "self_harm_support": {
+      "win": 18,
+      "loss": 12
+    }
+  },
+  "total_request_attempts": 305,
+  "settings": {
+    "batch_size": 5,
+    "sleep_seconds": 5.0,
+    "max_retries": 3,
+    "temperature": 0
+  }
+}
