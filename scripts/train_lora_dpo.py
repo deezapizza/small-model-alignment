@@ -31,6 +31,7 @@ import argparse  # noqa: E402
 import dataclasses  # noqa: E402
 import inspect  # noqa: E402
 import json  # noqa: E402
+import math  # noqa: E402
 import random  # noqa: E402
 import time  # noqa: E402
 from pathlib import Path  # noqa: E402
@@ -134,12 +135,17 @@ def main() -> None:
     lora = LoraConfig(r=args.lora_r, lora_alpha=args.lora_alpha, lora_dropout=args.lora_dropout,
                       target_modules=args.target_modules.split(","), bias="none", task_type="CAUSAL_LM")
     use_fp16 = torch.cuda.is_available()
+    # warmup as an explicit step count: newer TRL/transformers releases dropped `warmup_ratio`
+    steps_per_epoch = math.ceil(len(train_ds) / (args.batch_size * args.grad_accum))
+    planned_steps = args.max_steps if args.max_steps > 0 else math.ceil(steps_per_epoch * args.epochs)
+    warmup_steps = max(1, round(args.warmup_ratio * planned_steps))
+    print(f"planned optimizer steps {planned_steps} | warmup steps {warmup_steps}")
     config_kwargs = dict(
         output_dir=str(out / "trainer"), beta=args.beta, loss_type="sigmoid",
         learning_rate=args.lr, num_train_epochs=args.epochs, max_steps=args.max_steps,
         per_device_train_batch_size=args.batch_size, per_device_eval_batch_size=args.batch_size,
         gradient_accumulation_steps=args.grad_accum, lr_scheduler_type="cosine",
-        warmup_ratio=args.warmup_ratio, weight_decay=0.0, max_grad_norm=1.0,
+        warmup_steps=warmup_steps, weight_decay=0.0, max_grad_norm=1.0,
         max_length=args.max_length, max_prompt_length=args.max_prompt_length,
         logging_steps=1, eval_strategy="steps", eval_steps=args.eval_steps, save_strategy="no",
         fp16=use_fp16, bf16=False, report_to="none", seed=args.seed, remove_unused_columns=False,
@@ -178,6 +184,8 @@ def main() -> None:
     run_config = {**vars(args), **versions, "num_train": len(train_ds), "num_val": len(val_ds),
                   "trainable_params": trainable, "total_params": total,
                   "effective_batch_size": args.batch_size * args.grad_accum,
+                  "planned_steps": planned_steps, "warmup_steps": warmup_steps,
+                  "note": "TRL 1.x has no max_prompt_length; only max_length truncation applies",
                   "precision": "fp16 autocast + fp32 weights" if use_fp16 else "fp32",
                   "reference": "base model with LoRA adapter disabled (TRL PEFT default)",
                   "dpo_config": {k: (v if isinstance(v, (int, float, str, bool, type(None))) else str(v))
