@@ -1,0 +1,11 @@
+file,n,empty,mean_words,median_words,loop_rate,distinct2,mean_tokens,hit_max_tokens
+base_alpaca_eval_greedy.json,300,0,256.2,273.5,0.653,0.471,392.9,0.66
+base_alpaca_eval_rep1.1.json,300,0,261.2,268.5,0.493,0.648,396.9,0.553
+dpo_hh_hh_eval_greedy.json,300,0,147.9,127.0,0.367,0.721,181.7,0.077
+dpo_hh_hh_eval_rep1.1.json,300,0,119.6,114.0,0.03,0.947,149.2,0.013
+dpo_uf_alpaca_eval_greedy.json,300,0,205.5,204.5,0.453,0.682,276.1,0.19
+dpo_uf_alpaca_eval_rep1.1.json,300,0,190.4,191.0,0.09,0.889,255.5,0.09
+sft_alpaca_eval_greedy.json,300,0,145.7,116.5,0.317,0.739,195.2,0.113
+sft_alpaca_eval_rep1.1.json,300,0,138.4,133.5,0.077,0.902,184.4,0.043
+sft_hh_eval_greedy.json,300,0,173.4,157.0,0.437,0.699,210.8,0.127
+sft_hh_eval_rep1.1.json,300,0,130.0,130.5,0.053,0.937,160.5,0.017
