@@ -1,0 +1,23 @@
+{
+  "model": "outputs/lora_dpo_persona/merged",
+  "generator_name": "lora_dpo",
+  "eval_set": "eval_sets/persona_style_eval_40.json",
+  "num_prompts": 40,
+  "prompt_format": "tokenizer.apply_chat_template (user turn only, add_generation_prompt=True)",
+  "system_prompt": "tokenizer template default",
+  "decoding": "greedy",
+  "max_new_tokens": 512,
+  "do_sample": false,
+  "temperature": null,
+  "top_p": null,
+  "top_k": null,
+  "repetition_penalty": 1.1,
+  "no_repeat_ngram_size": 0,
+  "eos_token_id": [
+    2
+  ],
+  "batch_size": 8,
+  "dtype": "fp16",
+  "device": "cuda",
+  "torch": "2.11.0+cu128"
+}

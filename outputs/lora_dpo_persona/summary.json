@@ -1,0 +1,43 @@
+{
+  "initial_eval": {
+    "eval_loss": 0.6931473016738892,
+    "eval_model_preparation_time": 0.0233,
+    "eval_runtime": 5.3111,
+    "eval_samples_per_second": 3.766,
+    "eval_steps_per_second": 0.941,
+    "eval_entropy": 2.2466806173324585,
+    "eval_num_tokens": 0.0,
+    "eval_logits/chosen": 0.6212968286340973,
+    "eval_logits/rejected": 0.04683486280477958,
+    "eval_mean_token_accuracy": 0.316376793384552,
+    "eval_rewards/chosen": 0.0,
+    "eval_rewards/rejected": 0.0,
+    "eval_rewards/accuracies": 0.0,
+    "eval_rewards/margins": 0.0,
+    "eval_logps/chosen": -174.7008514404297,
+    "eval_logps/rejected": -125.6532211303711,
+    "epoch": 0,
+    "step": 0
+  },
+  "final_eval": {
+    "eval_loss": 0.1259119212627411,
+    "eval_model_preparation_time": 0.0233,
+    "eval_runtime": 1.0293,
+    "eval_samples_per_second": 19.43,
+    "eval_steps_per_second": 4.858,
+    "eval_entropy": 2.507578945159912,
+    "eval_num_tokens": 115893.0,
+    "eval_logits/chosen": 0.4524826349874297,
+    "eval_logits/rejected": 0.2912932711497227,
+    "eval_mean_token_accuracy": 0.34497201442718506,
+    "eval_rewards/chosen": 1.1265584111213685,
+    "eval_rewards/rejected": -1.0008488893508911,
+    "eval_rewards/accuracies": 1.0,
+    "eval_rewards/margins": 2.1274072885513307,
+    "eval_logps/chosen": -163.43526611328124,
+    "eval_logps/rejected": -135.66170959472657,
+    "epoch": 3.0
+  },
+  "global_steps": 75,
+  "minutes": 1.7938363631566365
+}
