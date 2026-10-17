@@ -1,0 +1,392 @@
+{
+  "summary": {
+    "original": "outputs/eval/lora_vs_base_persona_style_judged.jsonl",
+    "swapped": "outputs/eval/lora_vs_base_persona_style_swapped_judged.jsonl",
+    "num_pairs": 40,
+    "single_order_original": {
+      "wins": 8,
+      "losses": 0,
+      "ties": 32,
+      "unknown": 0,
+      "win_rate_excluding_ties": 1.0,
+      "win_rate_ties_half": 0.6,
+      "wilson_95ci_excluding_ties": [
+        0.6756,
+        1.0
+      ],
+      "sign_test_p_two_sided": 0.0078
+    },
+    "single_order_swapped": {
+      "wins": 8,
+      "losses": 0,
+      "ties": 32,
+      "unknown": 0,
+      "win_rate_excluding_ties": 1.0,
+      "win_rate_ties_half": 0.6,
+      "wilson_95ci_excluding_ties": [
+        0.6756,
+        1.0
+      ],
+      "sign_test_p_two_sided": 0.0078
+    },
+    "combined": {
+      "wins": 8,
+      "losses": 0,
+      "ties": 32,
+      "unknown": 0,
+      "win_rate_excluding_ties": 1.0,
+      "win_rate_ties_half": 0.6,
+      "wilson_95ci_excluding_ties": [
+        0.6756,
+        1.0
+      ],
+      "sign_test_p_two_sided": 0.0078
+    },
+    "position_inconsistent_win_loss_flips": 0,
+    "decision_agreement_between_orders": {
+      "same": 40
+    },
+    "judge_picked_A_share": {
+      "original": 0.625,
+      "swapped": 0.375
+    },
+    "combined_by_category": {
+      "coding": {
+        "win": 3,
+        "tie": 7
+      },
+      "cooking": {
+        "win": 5,
+        "tie": 5
+      },
+      "general_help": {
+        "tie": 10
+      },
+      "safety_sensitive": {
+        "tie": 10
+      }
+    }
+  },
+  "pairs": [
+    {
+      "pair_id": "persona-eval-cooking-00",
+      "category": "cooking",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-01",
+      "category": "cooking",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-02",
+      "category": "cooking",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-03",
+      "category": "cooking",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-04",
+      "category": "cooking",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-05",
+      "category": "cooking",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-06",
+      "category": "cooking",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-07",
+      "category": "cooking",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-08",
+      "category": "cooking",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-09",
+      "category": "cooking",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-00",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-01",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-02",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-03",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-04",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-05",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-06",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-07",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-08",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-09",
+      "category": "coding",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-00",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-01",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-02",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-03",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-04",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-05",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-06",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-07",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-08",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-09",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-00",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-01",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-02",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-03",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-04",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-05",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-06",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-07",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-08",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-09",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "tie",
+      "swapped": "tie",
+      "position_inconsistent": false
+    }
+  ]
+}

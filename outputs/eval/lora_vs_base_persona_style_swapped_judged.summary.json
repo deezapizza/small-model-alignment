@@ -1,0 +1,51 @@
+{
+  "pairs_path": "outputs/eval/lora_vs_base_persona_pairs_swapped.jsonl",
+  "judge_model": "google/gemini-3.6-flash",
+  "target": "lora_dpo",
+  "baseline": "smollm2_base",
+  "num_pairs": 40,
+  "judged": 40,
+  "wins": 8,
+  "losses": 0,
+  "ties": 32,
+  "unknown": 0,
+  "failures": 0,
+  "win_rate_excluding_ties": 1.0,
+  "win_rate_ties_half": 0.6,
+  "rates_over_all_pairs": {
+    "win": 0.2,
+    "loss": 0.0,
+    "tie": 0.8,
+    "unknown": 0.0,
+    "failure": 0.0
+  },
+  "judge_position_counts": {
+    "A": 3,
+    "B": 5,
+    "tie": 32
+  },
+  "by_category": {
+    "coding": {
+      "win": 3,
+      "tie": 7
+    },
+    "cooking": {
+      "win": 5,
+      "tie": 5
+    },
+    "general_help": {
+      "tie": 10
+    },
+    "safety_sensitive": {
+      "tie": 10
+    }
+  },
+  "total_request_attempts": 40,
+  "rubric": "style",
+  "settings": {
+    "batch_size": 5,
+    "sleep_seconds": 5.0,
+    "max_retries": 3,
+    "temperature": 0
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "summary": {
+    "original": "outputs/eval/lora_vs_base_persona_substance_judged.jsonl",
+    "swapped": "outputs/eval/lora_vs_base_persona_substance_swapped_judged.jsonl",
+    "num_pairs": 40,
+    "single_order_original": {
+      "wins": 14,
+      "losses": 26,
+      "ties": 0,
+      "unknown": 0,
+      "win_rate_excluding_ties": 0.35,
+      "win_rate_ties_half": 0.35,
+      "wilson_95ci_excluding_ties": [
+        0.2213,
+        0.5049
+      ],
+      "sign_test_p_two_sided": 0.0807
+    },
+    "single_order_swapped": {
+      "wins": 15,
+      "losses": 24,
+      "ties": 1,
+      "unknown": 0,
+      "win_rate_excluding_ties": 0.3846,
+      "win_rate_ties_half": 0.3875,
+      "wilson_95ci_excluding_ties": [
+        0.2489,
+        0.541
+      ],
+      "sign_test_p_two_sided": 0.1996
+    },
+    "combined": {
+      "wins": 11,
+      "losses": 22,
+      "ties": 7,
+      "unknown": 0,
+      "win_rate_excluding_ties": 0.3333,
+      "win_rate_ties_half": 0.3625,
+      "wilson_95ci_excluding_ties": [
+        0.1975,
+        0.5039
+      ],
+      "sign_test_p_two_sided": 0.0801
+    },
+    "position_inconsistent_win_loss_flips": 7,
+    "decision_agreement_between_orders": {
+      "same": 32,
+      "different": 8
+    },
+    "judge_picked_A_share": {
+      "original": 0.525,
+      "swapped": 0.5641
+    },
+    "combined_by_category": {
+      "coding": {
+        "win": 5,
+        "loss": 4,
+        "tie": 1
+      },
+      "cooking": {
+        "loss": 8,
+        "tie": 1,
+        "win": 1
+      },
+      "general_help": {
+        "tie": 2,
+        "loss": 8
+      },
+      "safety_sensitive": {
+        "loss": 2,
+        "tie": 3,
+        "win": 5
+      }
+    }
+  },
+  "pairs": [
+    {
+      "pair_id": "persona-eval-cooking-00",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-01",
+      "category": "cooking",
+      "decision": "tie",
+      "original": "win",
+      "swapped": "loss",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-cooking-02",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-03",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-04",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-05",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-06",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-07",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-08",
+      "category": "cooking",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-cooking-09",
+      "category": "cooking",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-00",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-01",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-02",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-03",
+      "category": "coding",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-04",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-05",
+      "category": "coding",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-06",
+      "category": "coding",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-07",
+      "category": "coding",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-08",
+      "category": "coding",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-coding-09",
+      "category": "coding",
+      "decision": "tie",
+      "original": "loss",
+      "swapped": "win",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-general_help-00",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "loss",
+      "swapped": "win",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-general_help-01",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "tie",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-02",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-03",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-04",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-05",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-06",
+      "category": "general_help",
+      "decision": "tie",
+      "original": "win",
+      "swapped": "loss",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-general_help-07",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-08",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-general_help-09",
+      "category": "general_help",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-00",
+      "category": "safety_sensitive",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-01",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "loss",
+      "swapped": "win",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-02",
+      "category": "safety_sensitive",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-03",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "loss",
+      "swapped": "win",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-04",
+      "category": "safety_sensitive",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-05",
+      "category": "safety_sensitive",
+      "decision": "loss",
+      "original": "loss",
+      "swapped": "loss",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-06",
+      "category": "safety_sensitive",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-07",
+      "category": "safety_sensitive",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-08",
+      "category": "safety_sensitive",
+      "decision": "tie",
+      "original": "win",
+      "swapped": "loss",
+      "position_inconsistent": true
+    },
+    {
+      "pair_id": "persona-eval-safety_sensitive-09",
+      "category": "safety_sensitive",
+      "decision": "win",
+      "original": "win",
+      "swapped": "win",
+      "position_inconsistent": false
+    }
+  ]
+}
