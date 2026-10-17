@@ -51,7 +51,20 @@ def main() -> None:
         ax.grid(True, color="#e1e0d9", linewidth=0.8)
         for side in ("top", "right"):
             ax.spines[side].set_visible(False)
-    axes[0].legend(frameon=False, fontsize=8)
+    if val:
+        best = max(val, key=lambda r: (r["val_reward_accuracy"], -r["val_loss"]))
+        final = val[-1]
+        for ax in axes:
+            ax.axvline(best["step"], color="#555555", linestyle=":", linewidth=1)
+            ax.axvline(final["step"], color="#555555", linestyle="--", linewidth=1)
+        axes[1].text(0.98, 0.04,
+                     f"best val acc {best['val_reward_accuracy']:.3f} @ step {best['step']} (dotted)\n"
+                     f"final {final['val_reward_accuracy']:.3f} @ step {final['step']} (dashed, evaluated)",
+                     transform=axes[1].transAxes, ha="right", va="bottom", fontsize=7,
+                     bbox=dict(boxstyle="round,pad=0.3", facecolor="white", edgecolor="#cccccc"))
+    axes[0].plot([], [], color="#555555", linestyle=":", label="best val accuracy")
+    axes[0].plot([], [], color="#555555", linestyle="--", label="final checkpoint")
+    axes[0].legend(frameon=False, fontsize=7)
     fig.suptitle(args.title or run.name, x=0.01, ha="left", fontsize=11)
     fig.tight_layout()
     out = Path(args.out) if args.out else run / "dpo_curves.png"

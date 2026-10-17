@@ -1,0 +1,10 @@
+{
+  "step": 469,
+  "val_loss": 0.5433698892593384,
+  "val_reward_accuracy": 0.7210000157356262,
+  "val_reward_margin": 0.7041515111923218,
+  "val_chosen_reward": -0.05670035257935524,
+  "val_rejected_reward": -0.7608518004417419,
+  "val_chosen_logp_per_token": -1.4967854022979736,
+  "val_rejected_logp_per_token": -1.7910305261611938
+}
